@@ -20,7 +20,7 @@ use App\Http\Controllers\Dashboard\EmailsController;
 // Dashboard
 Route::get('/app/login', [DashboardAuthController::class, 'loginPage'])->name('login'); // Done
 Route::post('/app/login', [DashboardAuthController::class, 'loginAuth'])->name('loginAuth'); // Done
-Route::post('/app/logout', [DashboardAuthController::class, 'logout'])->name('logout'); // Done
+Route::post('/app/logout', [DashboardAuthController::class, 'logout'])->name('app.logout'); // Done
 Route::get('/maintenance', [DashboardMainController::class, 'maintenance'])->name('maintenance'); // Done
 
 // Route::middleware(['web','admin', 'localization'])->prefix(LaravelLocalization::setLocale().'/app')->name('app.')->group(function () {

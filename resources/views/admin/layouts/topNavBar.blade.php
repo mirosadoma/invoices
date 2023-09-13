@@ -13,7 +13,7 @@
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
                     <a class="dropdown-item" href="{{route('app.admins.edit', \Auth::guard('admin')->user()->id)}}"><i class="me-50" data-feather="user"></i> @lang("My Profile")</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('app/logout')}}"><i class="me-50" data-feather="power"></i> @lang("Log Out")</a>
+                    <a class="dropdown-item" href="{{route('app.logout')}}"><i class="me-50" data-feather="power"></i> @lang("Log Out")</a>
                 </div>
             </li>
         </ul>

@@ -57,7 +57,7 @@
                 </div>
                 <div class="text-right">
                     {!! BackButton('Back', route('app.emails.index')) !!}
-                    {!! SubmitButton('Save') !!}
+                    {!! SubmitButton('Send') !!}
                 </div>
             </fieldset>
         </div>
