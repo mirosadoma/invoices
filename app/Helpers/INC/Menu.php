@@ -2,7 +2,7 @@
 $data = [
     [
         'title'         => 'Settings',
-        'icon'          => 'grid',
+        'icon'          => 'settings',
         'order'         => 1,
         'permission'    => 'settings',
         'items'         => [
@@ -15,7 +15,7 @@ $data = [
     ],
     [
         'title'         => 'Roles',
-        'icon'          => 'grid',
+        'icon'          => 'clipboard',
         'order'         => 2,
         'permission'    => 'roles',
         'items'         => [
@@ -33,7 +33,7 @@ $data = [
     ],
     [
         'title'         => 'Admins',
-        'icon'          => 'grid',
+        'icon'          => 'user-check',
         'order'         => 3,
         'permission'    => 'admins',
         'items'         => [
@@ -66,7 +66,7 @@ $data = [
     ],
     [
         'title'         => 'Clients',
-        'icon'          => 'grid',
+        'icon'          => 'users',
         'order'         => 4,
         'permission'    => 'clients',
         'items'         => [
@@ -99,7 +99,7 @@ $data = [
     ],
     [
         'title'         => 'Freelancers',
-        'icon'          => 'grid',
+        'icon'          => 'users',
         'order'         => 5,
         'permission'    => 'freelancers',
         'items'         => [
@@ -132,7 +132,7 @@ $data = [
     ],
     [
         'title'         => 'Countries',
-        'icon'          => 'grid',
+        'icon'          => 'map',
         'order'         => 6,
         'permission'    => 'countries',
         'items'         => [
@@ -150,7 +150,7 @@ $data = [
     ],
     [
         'title'         => 'Activities',
-        'icon'          => 'grid',
+        'icon'          => 'hash',
         'order'         => 7,
         'permission'    => 'activities',
         'items'         => [
@@ -168,7 +168,7 @@ $data = [
     ],
     [
         'title'         => 'Projects',
-        'icon'          => 'grid',
+        'icon'          => 'bookmark',
         'order'         => 8,
         'permission'    => 'projects',
         'items'         => [
@@ -186,7 +186,7 @@ $data = [
     ],
     [
         'title'         => 'Invoices',
-        'icon'          => 'grid',
+        'icon'          => 'credit-card',
         'order'         => 9,
         'permission'    => 'invoices',
         'items'         => [
@@ -204,7 +204,7 @@ $data = [
     ],
     [
         'title'         => 'Quotations',
-        'icon'          => 'grid',
+        'icon'          => 'dollar-sign',
         'order'         => 10,
         'permission'    => 'quotations',
         'items'         => [
@@ -222,7 +222,7 @@ $data = [
     ],
     [
         'title'         => 'Emails',
-        'icon'          => 'grid',
+        'icon'          => 'mail',
         'order'         => 11,
         'permission'    => 'emails',
         'items'         => [
