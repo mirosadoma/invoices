@@ -57,7 +57,7 @@ class QuotationsController extends Controller {
             return abort(403);
         }
         $data = $request->all();
-        $data['number'] = time();
+        $data['number'] = mt_rand(100000, 999999);
         if (isset($data['is_tax'])) {
             $data['is_tax'] == 1;
         }else{

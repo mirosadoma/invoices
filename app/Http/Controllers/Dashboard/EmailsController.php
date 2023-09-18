@@ -58,7 +58,7 @@ class EmailsController extends Controller {
                 // Email
                 $data['user_name'] = $client->name;
                 $data['user_email'] = $client->email;
-                $data['project_name'] = __("Kaf Ecommerce");
+                $data['project_name'] = __("Themarkrise");
                 $data['welcome_msg'] = __("Welcome");
                 $data['project_link'] = env('FRONT_URL', 'https://www.kafroasters.net/');
                 $data['content'] = $request->content;
@@ -74,7 +74,7 @@ class EmailsController extends Controller {
                 // Email
                 $data['user_name'] = $client->name;
                 $data['user_email'] = $client->email;
-                $data['project_name'] = __("Kaf Ecommerce");
+                $data['project_name'] = __("Themarkrise");
                 $data['welcome_msg'] = __("Welcome");
                 $data['project_link'] = env('FRONT_URL', 'https://www.kafroasters.net/');
                 $data['content'] = $request->content;

@@ -51,7 +51,7 @@
                                         </td>
                                         <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">
                                             <p>
-                                                <h6 class="text-base font-normal"><span class="font-bold">@lang('Quotation No:')</span> {{$quotation->number}}</h6>
+                                                <h6 class="text-base font-normal"><span class="font-bold">@lang('Quotation No:')</span> #{{$quotation->number}}</h6>
                                             </p>
                                         </td>
                                     </tr>
@@ -119,17 +119,17 @@
                                 <tbody>
                                     <tr class="cs-table_baseline border_dashed_bottom">
                                         <td class="cs-width_8 cs-primary_color cs-bold cs-f16 ">@lang('Sub Total:')</td>
-                                        <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{$quotation->quotation_activities->sum('price') ?? 0}} @lang("R.S")</td>
+                                        <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{$quotation->quotation_activities->sum('price') ?? 0}} {{$quotation->currance}}</td>
                                     </tr>
                                     @if ($quotation->is_tax)
                                         <tr class="cs-table_baseline border_dashed_bottom">
                                             <td class="cs-width_8 cs-primary_color cs-bold cs-f16 ">@lang('Tax:')</td>
-                                            <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{app_settings()->tax ?? 0}} @lang("R.S")</td>
+                                            <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{app_settings()->tax ?? 0}} {{$quotation->currance}}</td>
                                         </tr>
                                     @endif
                                     <tr class="cs-table_baseline border_solid_top border_solid_bottom">
                                         <td class="cs-width_8 cs-primary_color cs-bold cs-f16 ">@lang('Total:')</td>
-                                        <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{ ($quotation->is_tax ? $quotation->quotation_activities->sum('price') + ($quotation->quotation_activities->sum('price')*app_settings()->tax / 100) : $quotation->quotation_activities->sum('price') ?? 0) }} @lang("R.S")</td>
+                                        <td class="cs-width_2  cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">{{ ($quotation->is_tax ? $quotation->quotation_activities->sum('price') + ($quotation->quotation_activities->sum('price')*app_settings()->tax / 100) : $quotation->quotation_activities->sum('price') ?? 0) }} {{$quotation->currance}}</td>
                                     </tr>
                                 </tbody>
                             </table>

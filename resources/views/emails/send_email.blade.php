@@ -48,7 +48,7 @@
                                                             <table width="100%" cellspacing="0" cellpadding="0" role="presentation">
                                                                 <tr>
                                                                     <td align="center" style="position: relative;background: url('{{ $message->embed(public_path() . '/assets/email_head_img.jpeg') }}'); height: 320px;display: block;">
-                                                                        <img alt="{{ asset(app_settings()->logo ?? 'assets/aictec-shop-logo-01.svg') }}" title="Logo" src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/aictec-shop-logo-01.svg') }}" style="display: block!important; min-height: 70px!important; min-width: 170px!important; max-height: 100px!important; max-width: 200px!important; margin-top: -100px;">
+                                                                        <img alt="{{ asset(app_settings()->logo ?? 'assets/mark-rise-logo-01.png') }}" title="Logo" src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/mark-rise-logo-01.png') }}" style="display: block!important; min-height: 70px!important; min-width: 170px!important; max-height: 100px!important; max-width: 200px!important; margin-top: -100px;">
                                                                         {{-- <img class="adapt-img" src="{{ $message->embed(public_path() . '/assets/email_head_img.jpeg') }}"
                                                                         alt title width="510" style="display: block" height="324" layout="responsive"> --}}
                                                                     </td>
@@ -158,8 +158,8 @@
                                                                 <tr>
                                                                     <td align="left" class="es-m-txt-c" style="font-size: 0px">
                                                                         <a target="_blank" href="{{ $data['project_link'] }}">
-                                                                            <img src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/aictec-shop-logo-01.svg') }}"
-                                                                            alt="{{ asset(app_settings()->logo ?? 'assets/aictec-shop-logo-01.svg') }}" style="display: block" height="30" title="Logo" width="150">
+                                                                            <img src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/mark-rise-logo-01.png') }}"
+                                                                            alt="{{ asset(app_settings()->logo ?? 'assets/mark-rise-logo-01.png') }}" style="display: block" height="30" title="Logo" width="150">
                                                                         </a>
                                                                     </td>
                                                                 </tr>
