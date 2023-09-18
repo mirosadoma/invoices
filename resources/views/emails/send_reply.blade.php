@@ -167,49 +167,6 @@
                                                         </td>
                                                     </tr>
                                                 </table>
-                                                <table cellpadding="0" cellspacing="0" class="es-right" align="right">
-                                                    <tr>
-                                                        <td width="225" align="left">
-                                                            <table cellpadding="0" cellspacing="0" width="100%" role="presentation">
-                                                                <tr>
-                                                                    <td align="right" class="es-p5t es-m-txt-c" style="font-size:0">
-                                                                        <table cellpadding="0" cellspacing="0" class="es-table-not-adapt es-social" role="presentation">
-                                                                            <tr>
-                                                                                @foreach (app_social() as $social)
-                                                                                    @if ($social->type == "youtube")
-                                                                                        <td align="center" valign="top" class="es-p10r">
-                                                                                            <a target="_blank" href="{{$social->value}}" title="{{$social->type}}">
-                                                                                                <img src="https://gdxcgh.stripocdn.email/content/assets/img/social-icons/circle-white/youtube-circle-white.png" alt="Yt" title="Youtube" height="24" width="24">
-                                                                                            </a>
-                                                                                        </td>
-                                                                                    @elseif($social->type == "instagram")
-                                                                                        <td align="center" valign="top" class="es-p10r">
-                                                                                            <a target="_blank" href="{{$social->value}}" title="{{$social->type}}">
-                                                                                                <img src="https://gdxcgh.stripocdn.email/content/assets/img/social-icons/circle-white/instagram-circle-white.png" alt="Ig" title="Instagram" height="24" width="24">
-                                                                                            </a>
-                                                                                        </td>
-                                                                                    @elseif($social->type == "twitter")
-                                                                                        <td align="center" valign="top" class="es-p10r">
-                                                                                            <a target="_blank" href="{{$social->value}}" title="{{$social->type}}">
-                                                                                                <img src="https://gdxcgh.stripocdn.email/content/assets/img/social-icons/circle-white/twitter-circle-white.png" alt="Tw" title="Twitter" height="24" width="24">
-                                                                                            </a>
-                                                                                        </td>
-                                                                                    @elseif($social->type == "facebook")
-                                                                                        <td align="center" valign="top" class="es-p10r">
-                                                                                            <a target="_blank" href="{{$social->value}}" title="{{$social->type}}">
-                                                                                                <img src="https://gdxcgh.stripocdn.email/content/assets/img/social-icons/circle-white/facebook-circle-white.png" alt="Fb" title="Facebook" height="24" width="24">
-                                                                                            </a>
-                                                                                        </td>
-                                                                                    @endif
-                                                                                @endforeach
-                                                                            </tr>
-                                                                        </table>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </table>
                                             </td>
                                         </tr>
                                     </table>
