@@ -23,8 +23,8 @@
         <meta name="keywords" content="My Site">
         <meta name="author" content="Sadoma">
         <title> @lang('My Site Dashboard') - @yield('auth_title') </title>
-        <link rel="apple-touch-icon" href="{{app_settings()->icon_path}}">
-        <link rel="shortcut icon" type="image/x-icon" href="{{app_settings()->icon_path}}">
+        <link rel="apple-touch-icon" href="{{url('assets/markrise-favicon.png')}}">
+        <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/markrise-favicon.png')}}">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
         <!-- BEGIN: Vendor CSS-->
         <link rel="stylesheet" type="text/css" href="{{url('assets/admin/app-assets/vendors/css/vendors-rtl.min.css')}}">
