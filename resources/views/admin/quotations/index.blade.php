@@ -93,7 +93,15 @@
                                             @endif
                                         </td>
                                         <td> {{$item->currance ?? '-------'}} </td>
-                                        <td> @lang(ucwords(strtolower(str_replace('_',' ',$item->status)))) </td>
+                                        <td>
+                                            @if ($item->status == "waiting")
+                                                <span class="btn btn-warning btn-round waves-effect waves-float waves-light">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                            @elseif($item->status == "un_approved")
+                                                <span class="btn btn-danger btn-round waves-effect waves-float waves-light">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                            @elseif($item->status == "approved")
+                                                <span class="btn btn-success btn-round waves-effect waves-float waves-light">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                            @endif
+                                        </td>
                                         <td> {{$item->project->name ?? '-------'}} </td>
                                         <td> {{ucfirst($item->user_type) ?? '-------'}} </td>
                                         <td> {{$item->user->name ?? '-------'}} </td>

@@ -58,6 +58,7 @@ class QuotationsController extends Controller {
         }
         $data = $request->all();
         $data['number'] = mt_rand(100000, 999999);
+        $data['status'] = 'waiting';
         if (isset($data['is_tax'])) {
             $data['is_tax'] == 1;
         }else{

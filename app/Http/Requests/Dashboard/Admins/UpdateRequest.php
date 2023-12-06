@@ -37,7 +37,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         $rules = [
-            'name'                  => 'required|string|between:2,100|unique:users,name,'.$this->admin,
+            'name'                  => 'required|string|between:2,100',
             'email'                 => 'required|email:filter|between:2,200|unique:users,email,'.$this->admin,
             'phone'                 => 'required|min:9|max:15|unique:users,phone,'.$this->admin,
             // 'image'                 => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',

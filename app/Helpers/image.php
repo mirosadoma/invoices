@@ -43,32 +43,19 @@ if (!function_exists('base64Uploud')) {
 if (!function_exists('SalokaUploads')) {
     function SalokaUploads($file, $type = 'image', $path = null, $wh = [], $base64 = false, $watermark = false)
     {
-        $destinationPath = (is_null($path)) ? 'uploads' : 'uploads/' . $path;
-        if (!is_dir($destinationPath)) {
+        $destinationPath = (is_null($path))? public_path('uploads'):public_path('uploads/'.$path);
+        $mm = (is_null($path))?'uploads' :'uploads/'.$path;
+        if(!is_dir($destinationPath)) {
             mkdir($destinationPath, 0755, true);
         }
-        if ($type != 'image') {
-            // $filename = time() . rand(10000, 99999) . '.' . $file->getClientOriginalExtension();
-            $filename = $file->getClientOriginalName();
-            $path     = $destinationPath;
-            $file->move($destinationPath, $filename);
-            return $destinationPath . '/' . $filename;
-        }
-        if ($base64 == true) {
-            $input = time() . rand(10000, 99999) . '.webp';
-            $file = \Image::make(base64_decode($file));
-        } else {
-            $input = time() . rand(10000, 99999) . '.webp';
-            $file = \Image::make($file->getRealPath());
-        }
-        if (!empty($wh)) {
-            $file->resize($wh['w'], $wh['h']);
-        }
-        if ($watermark == true) {
-            $file->insert('/test.png');
-        }
-        $file->save($destinationPath . '/' . $input);
-        return $destinationPath . '/' . $input;
+        // if($file->getClientOriginalExtension() == "mp4") {
+        //     $filename = time() . rand(10000, 99999) .'.'.$file->getClientOriginalExtension();
+        //     $file->move($destinationPath, $filename);
+        //     return $mm . '/' .$filename;
+        // }
+        $imageName = rand(1,5000).'_'.time().'.'.$file->extension();
+        $file->move($destinationPath, $imageName);
+        return $mm.'/'.$imageName;
     }
 }
 

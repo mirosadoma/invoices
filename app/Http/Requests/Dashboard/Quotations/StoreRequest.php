@@ -20,7 +20,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'currance'              => __('Currance'),
-            'status'                => __('Status'),
+            // 'status'                => __('Status'),
             'project_id'            => __('Project'),
             'user_type'             => __('User Type'),
             'user_id'               => __('Person'),
@@ -36,7 +36,7 @@ class StoreRequest extends FormRequest
     {
         return [
             'currance'              => 'required|string|in:USD,EGP,SAR,AED',
-            'status'                => 'required|string|in:paid,unpaid,in_process',
+            // 'status'                => 'required|string|in:waiting,approved,un_approved',
             'project_id'            => 'required|exists:projects,id|not_in:null,0',
             'user_type'             => 'required|string|in:client,freelancer',
             'user_id'               => 'required|exists:users,id|not_in:null,0',

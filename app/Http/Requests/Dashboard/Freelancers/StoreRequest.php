@@ -37,7 +37,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'                  => 'required|string|between:2,100|unique:users,name',
+            'name'                  => 'required|string|between:2,100',
             'email'                 => 'required|email:filter|between:2,200|unique:users,email',
             'phone'                 => 'required|min:9|max:15|unique:users,phone',
             // 'image'                 => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',

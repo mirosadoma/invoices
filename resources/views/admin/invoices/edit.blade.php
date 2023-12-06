@@ -75,7 +75,7 @@
                     <div class="form-group row show_persons show_clients" style="display: none">
                         <label class="control-label col-sm-2">@lang('Persons')</label>
                         <div class="input-icon right col-sm-10">
-                            <select class="select-search form-control" name="user_id">
+                            <select class="select-search form-control users" name="user_id">
                                 <option value="0" selected disabled>@lang('Choose')</option>
                                 @foreach ($clients as $client)
                                     <option value="{{$client->id}}" @if(old('user_id', $invoice->user_id) == $client->id) selected @endif>{{$client->name}}</option>
@@ -86,7 +86,7 @@
                     <div class="form-group row show_persons show_freelancers" style="display: none">
                         <label class="control-label col-sm-2">@lang('Persons')</label>
                         <div class="input-icon right col-sm-10">
-                            <select class="select-search form-control" name="user_id">
+                            <select class="select-search form-control users" name="user_id">
                                 <option value="0" selected disabled>@lang('Choose')</option>
                                 @foreach ($freelancers as $freelancer)
                                     <option value="{{$freelancer->id}}" @if(old('user_id', $invoice->user_id) == $freelancer->id) selected @endif>{{$freelancer->name}}</option>
@@ -189,8 +189,12 @@
         $('.choose_user_typr').on('click', function(){
             $('.show_persons').slideUp();
             if ($(this).val() == 'client') {
+                $(".users > option").removeAttr("selected");
+                $(".users").val(null).trigger('change');
                 $('.show_clients').slideDown();
             }else if ($(this).val() == 'freelancer') {
+                $(".users > option").removeAttr("selected");
+                $(".users").val(null).trigger('change');
                 $('.show_freelancers').slideDown();
             }
         });

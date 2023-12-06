@@ -36,17 +36,17 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="control-label col-sm-2">@lang('Status')</label>
                         <div class="input-icon right col-sm-10">
                             <select class="select-search form-control" name="status">
                                 <option value="0" selected disabled>@lang('Choose')</option>
-                                <option value="paid" @if(old('status') == "paid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','paid'))))</option>
-                                <option value="unpaid" @if(old('status') == "unpaid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','unpaid'))))</option>
-                                <option value="in_process" @if(old('status') == "in_process") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','in_process'))))</option>
+                                <option value="waiting" @if(old('status') == "waiting") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','waiting'))))</option>
+                                <option value="approved" @if(old('status') == "approved") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','approved'))))</option>
+                                <option value="un_approved" @if(old('status') == "un_approved") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','un_approved'))))</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group row">
                         <label class="control-label col-sm-2">@lang('Projects')</label>
                         <div class="input-icon right col-sm-10">
@@ -74,7 +74,7 @@
                     <div class="form-group row show_persons show_clients" style="display: none">
                         <label class="control-label col-sm-2">@lang('Persons')</label>
                         <div class="input-icon right col-sm-10">
-                            <select class="select-search form-control" name="user_id">
+                            <select class="select-search form-control users" name="user_id">
                                 <option value="0" selected disabled>@lang('Choose')</option>
                                 @foreach ($clients as $client)
                                     <option value="{{$client->id}}" @if(old('user_id')) selected @endif>{{$client->name}}</option>
@@ -85,7 +85,7 @@
                     <div class="form-group row show_persons show_freelancers" style="display: none">
                         <label class="control-label col-sm-2">@lang('Persons')</label>
                         <div class="input-icon right col-sm-10">
-                            <select class="select-search form-control" name="user_id">
+                            <select class="select-search form-control users" name="user_id">
                                 <option value="0" selected disabled>@lang('Choose')</option>
                                 @foreach ($freelancers as $freelancer)
                                     <option value="{{$freelancer->id}}" @if(old('user_id')) selected @endif>{{$freelancer->name}}</option>
@@ -153,8 +153,12 @@
         $('.choose_user_typr').on('click', function(){
             $('.show_persons').slideUp();
             if ($(this).val() == 'client') {
+                $(".users > option").removeAttr("selected");
+                $(".users").val(null).trigger('change');
                 $('.show_clients').slideDown();
             }else if ($(this).val() == 'freelancer') {
+                $(".users > option").removeAttr("selected");
+                $(".users").val(null).trigger('change');
                 $('.show_freelancers').slideDown();
             }
         });

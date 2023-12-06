@@ -26,7 +26,7 @@ class AdminUpdateRequest extends FormRequest
     public function rules()
     {
         $return = [
-            'name'        => 'required|min:6|max:30|unique:users,name,'.$this->admin->id,
+            'name'        => 'required|min:6|max:30',
             'email'       => 'required|email|unique:users,email,'.$this->admin->id,
             'phone'       => 'required|min:9|max:15|unique:users,phone,'.$this->admin->id,
         ];

@@ -19,7 +19,7 @@ class CreateQuotationsTable extends Migration
             $table->string('signature')->nullable();
             $table->tinyInteger('is_tax')->default(0);
             $table->enum('currance',['USD','EGP','SAR','AED'])->nullable();
-            $table->enum('status',['paid','unpaid','in_process'])->nullable();
+            $table->enum('status',['waiting','approved','un_approved'])->nullable();
             $table->unsignedBigInteger('project_id')->nullable();
             $table->foreign('project_id')->references('id')->on('projects')->onUpdate('cascade')->onDelete('cascade');
             $table->enum('user_type',['client','freelancer'])->nullable();
