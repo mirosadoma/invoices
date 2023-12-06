@@ -68,16 +68,18 @@ class InvoicesController extends Controller {
         }
         $invoice = Invoice::create($data);
         if ($request->has('activities') && !is_null(request('activities'))) {
-            foreach ($data['activities']['id'] as $i => $tp) {
-                if ($data['activities']['price'][$i] && $data['activities']['price'][$i] != '' && $data['activities']['price'][$i] != ' ') {
-                    InvoiceActivities::create([
-                        'invoice_id'    => $invoice->id,
-                        'activity_id'   => $data['activities']['id'][$i],
-                        'price'         => $data['activities']['price'][$i],
-                        'description'   => $data['activities']['description'][$i],
-                    ]);
+            if (isset($data['activities']['id'])) {
+                foreach ($data['activities']['id'] as $i => $tp) {
+                    if ($data['activities']['price'][$i] && $data['activities']['price'][$i] != '' && $data['activities']['price'][$i] != ' ') {
+                        InvoiceActivities::create([
+                            'invoice_id'    => $invoice->id,
+                            'activity_id'   => $data['activities']['id'][$i],
+                            'price'         => $data['activities']['price'][$i],
+                            'description'   => $data['activities']['description'][$i],
+                        ]);
+                    }
+                    $i++;
                 }
-                $i++;
             }
         }
         return redirect()->route('app.invoices.index')->with('success', __('Data Saved Successfully'));
@@ -111,17 +113,19 @@ class InvoicesController extends Controller {
         }
         $invoice->update($data);
         if ($request->has('activities') && !is_null(request('activities'))) {
-            InvoiceActivities::where('invoice_id', $invoice->id)->delete();
-            foreach ($data['activities']['id'] as $i => $tp) {
-                if ($data['activities']['price'][$i] && $data['activities']['price'][$i] != '' && $data['activities']['price'][$i] != ' ') {
-                    InvoiceActivities::create([
-                        'invoice_id'    => $invoice->id,
-                        'activity_id'   => $data['activities']['id'][$i],
-                        'price'         => $data['activities']['price'][$i],
-                        'description'   => $data['activities']['description'][$i],
-                    ]);
+            if (isset($data['activities']['id'])) {
+                InvoiceActivities::where('invoice_id', $invoice->id)->delete();
+                foreach ($data['activities']['id'] as $i => $tp) {
+                    if ($data['activities']['price'][$i] && $data['activities']['price'][$i] != '' && $data['activities']['price'][$i] != ' ') {
+                        InvoiceActivities::create([
+                            'invoice_id'    => $invoice->id,
+                            'activity_id'   => $data['activities']['id'][$i],
+                            'price'         => $data['activities']['price'][$i],
+                            'description'   => $data['activities']['description'][$i],
+                        ]);
+                    }
+                    $i++;
                 }
-                $i++;
             }
         }
         return redirect()->route('app.invoices.index')->with('success', __('Data Updated Successfully'));
