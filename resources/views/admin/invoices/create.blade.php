@@ -36,7 +36,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         <label class="control-label col-sm-2">@lang('Status')</label>
                         <div class="input-icon right col-sm-10">
                             <select class="select-search form-control" name="status">
@@ -46,7 +46,7 @@
                                 <option value="in_process" @if(old('status') == "in_process") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','in_process'))))</option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="form-group row">
                         <label class="control-label col-sm-2">@lang('Projects')</label>
                         <div class="input-icon right col-sm-10">
