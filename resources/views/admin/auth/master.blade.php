@@ -96,7 +96,7 @@
                                         <img src="{{app_settings()->logo_path}}" style="max-height: 100px;" alt="{{ env('APP_NAME') }}">
                                         {{-- <h2 class="brand-text text-primary ms-1" style="margin: 0;line-height: 3;">@lang("Administrators")</h2> --}}
                                     </a>
-                                    <h4 class="card-title mb-1 {{ (\App::getLocale() == "en") ? 'text-end' : ''}}">@lang("Welcome to Invoices!") 👋</h4>
+                                    <h4 class="card-title mb-1 {{ (\App::getLocale() == "en") ? 'text-end' : ''}}">@lang("Welcome to Themarkrise!") 👋</h4>
                                     <p class="card-text mb-2 {{ (\App::getLocale() == "en") ? 'text-end' : ''}}">@lang("Please sign-in to your account and start the adventure")</p>
                                     @yield('auth_content')
                                 </div>

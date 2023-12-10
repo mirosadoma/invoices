@@ -19,7 +19,7 @@ class SettingsSeeder extends Seeder
         // SiteConfig
         SiteConfig::create([
             // 'ar'    => [
-            //     'title'                 => 'الفواتير',
+            //     'title'                 => 'مارك ريز',
             //     'company_name'          => 'شركة شاذلى',
             //     'terms_and_conditions'  => '<h1>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام &quot;هنا يوجد محتوى نصي، هنا يوجد محتوى نصي&quot; فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء. العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب تستخدم لوريم إيبسوم بشكل إفتراضي كنموذج</h1>
 
@@ -35,14 +35,9 @@ class SettingsSeeder extends Seeder
             //     'updated_at'            => Carbon::now(),
             // ],
             'en'    => [
-                'title'                 => 'Invoices',
+                'title'                 => 'Themarkrise',
                 'company_name'          => 'Shazly Company',
-                'terms_and_conditions'  => '<h1>There is a proven fact from a long time ago that the readable content of a page will not distract the reader from focusing on the external appearance of the text or the form of paragraphs placed on the page that he reads. Therefore, the Lorem Ipsum method is used because it gives a natural distribution - to some extent - to the letters instead of using &quot;here there is textual content, here there is textual content&quot; and makes it (i.e. the letters) look like readable text. Many desktop publishing programs and web page editing programs use Lorem Ipsum by default as a template</h1>
-
-                                                <p>There is a proven fact from a long time ago that the readable content of a page will not distract the reader from focusing on the external appearance of the text or the form of paragraphs placed on the page that he reads. Therefore, the Lorem Ipsum method is used because it gives a natural distribution - to some extent - to the letters instead of using &quot;here there is textual content, here there is textual content&quot; and makes it (i.e. the letters) look like readable text. Many desktop publishing programs and web page editing programs use Lorem Ipsum by default as a template</p>
-
-                                                <p>There is a proven fact from a long time ago that the readable content of a page will not distract the reader from focusing on the external appearance of the text or the form of paragraphs placed on the page that he reads. Therefore, the Lorem Ipsum method is used because it gives a natural distribution - to some extent - to the letters instead of using &quot;here there is textual content, here there is textual content&quot; and makes it (i.e. the letters) look like readable text. Many desktop publishing programs and web page editing programs use Lorem Ipsum by default as a template</p>
-                                            ',
+                'terms_and_conditions'  => '<p>There is a proven fact from a long time ago that the readable content of a page will not distract the reader from focusing on the external appearance of the text or the form of paragraphs placed on the page that he reads. Therefore, the Lorem Ipsum method is used because it gives a natural distribution - to some extent - to the letters instead of using &quot;here there is textual content, here there is textual content&quot; and makes it (i.e. the letters) look like readable text. Many desktop publishing programs and web page editing programs use Lorem Ipsum by default as a template</p>',
                 'locale'                => 'en',
                 'site_config_id'        => 1,
                 'created_at'            => Carbon::now(),

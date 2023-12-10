@@ -20,7 +20,7 @@
     </style>
 </head>
     <body style="background-color: #fff !important;">
-        <div class="py-20 relative">
+        <div class="relative">
             <div class="cs-container" style="background-color: #fff !important;">
                 <div class="cs-invoice p-12 rounded-3xl" style="height: 100% !important;">
                     <div class="cs-invoice_in">
@@ -98,10 +98,10 @@
                                         <tbody class="bg-white">
                                             @if($quotation->quotation_activities)
                                                 @foreach ($quotation->quotation_activities as $key => $quotation_activity)
-                                                    <tr class="bg-primary text-white text-center">
-                                                        <th class="p-5 text-base font-semibold border-style">{{$quotation_activity->activity->name}}</th>
-                                                        <th class="p-5 text-base font-semibold border-style">{{$quotation_activity->description}}</th>
-                                                        <th class="p-5 text-base font-semibold border-style">{{$quotation_activity->price}}</th>
+                                                    <tr class="bg-gray-100 text-center">
+                                                        <td class="p-5 text-base font-medium border-style">{{$quotation_activity->activity->name}}</td>
+                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style">{{$quotation_activity->description}}</td>
+                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style">{{$quotation_activity->price}}</td>
                                                     </tr>
                                                 @endforeach
                                             @else

@@ -10,7 +10,7 @@
     {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <!-- For iPhone -->
     <meta name="msapplication-TileColor" content="#00bcd4">
-    <title>@lang("Invoices") - @yield('head_title')</title>
+    <title>@lang("Themarkrise") - @yield('head_title')</title>
     @include('admin.layouts.inc.styles')
     <!-- BEGIN: loader-->
     {!! assetAdmin('app-assets/loader/loader.css','css') !!}
