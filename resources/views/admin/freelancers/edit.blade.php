@@ -34,12 +34,12 @@
                     <div class="form-group row">
                         {!! Inputs('text', 'phone', 'Phone', 'form-control', $freelancer->phone) !!}
                     </div>
-                    <div class="form-group row">
+                    {{-- <div class="form-group row">
                         {!! Inputs('password', 'password', 'Password', 'form-control') !!}
                     </div>
                     <div class="form-group row">
                         {!! Inputs('password', 'password_confirmation', 'Password Confirmation', 'form-control') !!}
-                    </div>
+                    </div> --}}
                     <div class="form-group row">
                         <label class="control-label col-sm-2">@lang('Country')</label>
                         <div class="input-icon right col-sm-10">

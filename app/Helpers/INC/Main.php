@@ -73,4 +73,12 @@ return [
         'permission'    => 'quotations',
         'count'         => \App\Models\Quotations\Quotation::count()
     ],
+    [
+        'title'         => __('Expenses'),
+        'icon'          => 'fa fa-bar-chart-o',
+        'color'         => 'blue',
+        'url'           => route('app.expenses.index'),
+        'permission'    => 'expenses',
+        'count'         => \App\Models\Expenses\Expense::count()
+    ],
 ];

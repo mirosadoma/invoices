@@ -71,7 +71,7 @@ class FreelancersController extends Controller {
         // if (request()->has('image') && $request->image != NULL) {
         //     $data['image']  = imageUpload($request->image, 'freelancers');
         // }
-        $data['password']   = bcrypt($request->password);
+        // $data['password']   = bcrypt($request->password);
         $data['type']       = 'freelancer';
         $data['is_active']  = 1;
         $freelancer              = User::create($data);
@@ -105,11 +105,11 @@ class FreelancersController extends Controller {
         // }else{
         //     unset($data['image']);
         // }
-        if ($request->has("password") && !is_null($request->password)) {
-            $data['password']   = bcrypt($request->password);
-        }else{
-            unset($data['password']);
-        }
+        // if ($request->has("password") && !is_null($request->password)) {
+        //     $data['password']   = bcrypt($request->password);
+        // }else{
+        //     unset($data['password']);
+        // }
         $data['type']           = 'freelancer';
         $freelancer->update($data);
         return redirect()->route('app.freelancers.index')->with('success', __('Data Updated Successfully'));

@@ -23,8 +23,8 @@ class UpdateRequest extends FormRequest
             'email'                 => __('Email'),
             'phone'                 => __('Phone'),
             // 'image'                 => __('Image'),
-            'password'              => __('Password'),
-            'password_confirmation' => __('Password Confirmation'),
+            // 'password'              => __('Password'),
+            // 'password_confirmation' => __('Password Confirmation'),
             'country_id'            => __('Country'),
         ];
     }
@@ -41,8 +41,8 @@ class UpdateRequest extends FormRequest
             'email'                 => 'required|email:filter|between:2,200|unique:users,email,'.$this->client,
             'phone'                 => 'required|min:9|max:15|unique:users,phone,'.$this->client,
             // 'image'                 => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'password'              => 'nullable|min:5|max:255',
-            'password_confirmation' => 'required_with:password|same:password',
+            // 'password'              => 'nullable|min:5|max:255',
+            // 'password_confirmation' => 'required_with:password|same:password',
             'country_id'            => 'required|exists:countries,id|not_in:null,0',
         ];
         return $rules;

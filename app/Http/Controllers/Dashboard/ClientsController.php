@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Http\Requests\Dashboard\Clients\StoreRequest;
 use App\Http\Requests\Dashboard\Clients\UpdateRequest;
 use App\Models\Countries\Country;
+use Illuminate\Support\Facades\Auth;
 
 class ClientsController extends Controller {
 
@@ -71,7 +72,7 @@ class ClientsController extends Controller {
         // if (request()->has('image') && $request->image != NULL) {
         //     $data['image']  = imageUpload($request->image, 'clients');
         // }
-        $data['password']   = bcrypt($request->password);
+        // $data['password']   = bcrypt($request->password);
         $data['type']       = 'client';
         $data['is_active']  = 1;
         $client              = User::create($data);
@@ -82,7 +83,7 @@ class ClientsController extends Controller {
     }
 
     public function edit($client) {
-        if (\Auth::guard('admin')->user()->id != $client) {
+        if (Auth::guard('admin')->user()->id != $client) {
             if (!permissionCheck('clients.update')) {
                 return abort(403);
             }
@@ -93,7 +94,7 @@ class ClientsController extends Controller {
     }
 
     public function update(UpdateRequest $request, $client) {
-        if (\Auth::guard('admin')->user()->id != $client) {
+        if (Auth::guard('admin')->user()->id != $client) {
             if (!permissionCheck('clients.update')) {
                 return abort(403);
             }
@@ -105,11 +106,11 @@ class ClientsController extends Controller {
         // }else{
         //     unset($data['image']);
         // }
-        if ($request->has("password") && !is_null($request->password)) {
-            $data['password']   = bcrypt($request->password);
-        }else{
-            unset($data['password']);
-        }
+        // if ($request->has("password") && !is_null($request->password)) {
+        //     $data['password']   = bcrypt($request->password);
+        // }else{
+        //     unset($data['password']);
+        // }
         $data['type']           = 'client';
         $client->update($data);
         return redirect()->route('app.clients.index')->with('success', __('Data Updated Successfully'));

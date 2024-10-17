@@ -211,6 +211,176 @@
     .main-menu .navbar-header .navbar-brand{
         margin: 0 !important;
     }
+    .main-menu.menu-light .navigation > li.active > a{
+        box-shadow: none !important;
+    }
+    .bg-label-secondary {
+    background-color: #ebebed !important;
+    color: #808390 !important
+    }
+
+    .bg-label-success {
+        background-color: #ddf6e8 !important;
+        color: #28c76f !important;
+    }
+
+    .bg-label-info {
+        background-color: #d6f4f8 !important;
+        color: #00bad1 !important
+    }
+
+    .bg-label-warning {
+        background-color: #fff0e1 !important;
+        color: #ff9f43 !important
+    }
+
+    .bg-label-danger {
+        background-color: #ffe2e3 !important;
+        color: #ff4c51 !important
+    }
+
+    .bg-label-light {
+        background-color: #fafafb !important;
+        color: #dfdfe3 !important
+    }
+
+    .bg-label-dark {
+        background-color: #e2e2e2 !important;
+        color: #4b4b4b !important
+    }
+
+    .bg-label-gray {
+        background-color: rgba(243,242,243,.92) !important;
+        color: rgba(47,43,61,.5) !important
+    }
+
+    .bg-label-hover-secondary {
+        background-color: #ebebed !important;
+        color: #808390 !important
+    }
+
+    .bg-label-hover-secondary:hover {
+        background-color: #808390 !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-success {
+        background-color: #ddf6e8 !important;
+        color: #28c76f !important
+    }
+
+    .bg-label-hover-success:hover {
+        background-color: #28c76f !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-info {
+        background-color: #d6f4f8 !important;
+        color: #00bad1 !important
+    }
+
+    .bg-label-hover-info:hover {
+        background-color: #00bad1 !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-warning {
+        background-color: #fff0e1 !important;
+        color: #ff9f43 !important
+    }
+
+    .bg-label-hover-warning:hover {
+        background-color: #ff9f43 !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-danger {
+        background-color: #ffe2e3 !important;
+        color: #ff4c51 !important
+    }
+
+    .bg-label-hover-danger:hover {
+        background-color: #ff4c51 !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-light {
+        background-color: #fafafb !important;
+        color: #dfdfe3 !important
+    }
+
+    .bg-label-hover-light:hover {
+        background-color: #dfdfe3 !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-dark {
+        background-color: #e2e2e2 !important;
+        color: #4b4b4b !important
+    }
+
+    .bg-label-hover-dark:hover {
+        background-color: #4b4b4b !important;
+        color: #fff !important
+    }
+
+    .bg-label-hover-gray {
+        background-color: rgba(243,242,243,.92) !important;
+        color: rgba(47,43,61,.5) !important
+    }
+
+    .bg-label-hover-gray:hover {
+        background-color: rgba(47,43,61,.5) !important;
+        color: #fff !important
+    }
+
+    .bg-gradient-secondary {
+        background-image: linear-gradient(45deg, #808390, #c0c1c8) !important
+    }
+
+    .bg-gradient-success {
+        background-image: linear-gradient(45deg, #28c76f, #94e3b7) !important
+    }
+
+    .bg-gradient-info {
+        background-image: linear-gradient(45deg, #00bad1, #80dde8) !important
+    }
+
+    .bg-gradient-warning {
+        background-image: linear-gradient(45deg, #ff9f43, #ffcfa1) !important
+    }
+
+    .bg-gradient-danger {
+        background-image: linear-gradient(45deg, #ff4c51, #ffa6a8) !important
+    }
+
+    .bg-gradient-light {
+        background-image: linear-gradient(45deg, #dfdfe3, #efeff1) !important
+    }
+
+    .bg-gradient-dark {
+        background-image: linear-gradient(45deg, #4b4b4b, #a5a5a5) !important
+    }
+
+    .bg-gradient-gray {
+        background-image: linear-gradient(45deg, rgba(47, 43, 61, 0.5), #97959e) !important
+    }
+
+    a.bg-dark:hover,a.bg-dark:focus {
+        background-color: rgba(47,43,61,.9) !important
+    }
+
+    a.bg-light:hover,a.bg-light:focus {
+        background-color: rgba(47,43,61,.12) !important
+    }
+
+    a.bg-lighter:hover,a.bg-lighter:focus {
+        background-color: rgba(47,43,61,.1) !important
+    }
+
+    a.bg-lightest:hover,a.bg-lightest:focus {
+        background-color: rgba(47,43,61,.06) !important
+    }
 </style>
 <script>
     var _token_ = "{{ csrf_token() }}";

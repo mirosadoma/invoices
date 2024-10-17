@@ -11,8 +11,8 @@
                     <div class="card-header border-bottom">
                         <h4 class="card-title">@lang('Advanced Search')</h4>
                         <div class="card-title">
-                            <button class="btn btn-primary btn-round waves-effect waves-float waves-light" title="{{__("Search")}}" style="padding: 10px 25px;" type="button" onclick="$('.dt_adv_search').submit()"><i data-feather="database"></i></button>
-                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset Search Data")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"><i data-feather="minus-circle"></i></button>
+                            <button class="btn btn-primary btn-round waves-effect waves-float waves-light search_button" title="{{__("Search")}}" style="padding: 10px 25px;" type="button"> @lang("Search") <i data-feather="search"></i></button>
+                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset Search Data")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"> @lang("Reset Search Data") <i data-feather="minus-circle"></i></button>
                         </div>
                     </div>
                     <!--Search Form -->
@@ -25,7 +25,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">@lang('Created At')</label>
-                                    <input type="date" name="created_at" class="form-control dt-input" data-column="6" value="{{old('created_at', request('created_at'))}}" data-column-index="5" />
+                                    <input type="date" name="created_at" class="form-control dt-input" data-column="6" min="2022-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('created_at', request('created_at'))}}" data-column-index="5" />
                                 </div>
                             </div>
                             <input type="hidden" name="filter" value="1"/>
@@ -44,11 +44,9 @@
                             </thead>
                             <tbody>
                                 @if ($lists->count())
-                                @foreach ($lists as $item)
+                                @foreach ($lists as $key => $item)
                                     <tr>
-                                        <td>
-                                            <a href="javascript:;"> {{$item->id}} </a>
-                                        </td>
+                                        <td>{{$key+1}}</td>
                                         <td> {{$item->name}} </td>
                                         <td> {{$item->created_at}} </td>
                                         <td>

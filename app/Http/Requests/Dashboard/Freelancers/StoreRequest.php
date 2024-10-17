@@ -23,8 +23,8 @@ class StoreRequest extends FormRequest
             'email'                 => __('Email'),
             'phone'                 => __('Phone'),
             // 'image'                 => __('Image'),
-            'password'              => __('Password'),
-            'password_confirmation' => __('Password Confirmation'),
+            // 'password'              => __('Password'),
+            // 'password_confirmation' => __('Password Confirmation'),
             'country_id'            => __('Country'),
         ];
     }
@@ -41,8 +41,8 @@ class StoreRequest extends FormRequest
             'email'                 => 'required|email:filter|between:2,200|unique:users,email',
             'phone'                 => 'required|min:9|max:15|unique:users,phone',
             // 'image'                 => 'nullable|image|mimes:jpeg,png,jpg,gif,svg',
-            'password'              => 'required|between:6,255',
-            'password_confirmation' => 'required_with:password|same:password',
+            // 'password'              => 'required|between:6,255',
+            // 'password_confirmation' => 'required_with:password|same:password',
             'country_id'            => 'required|exists:countries,id|not_in:null,0',
         ];
     }

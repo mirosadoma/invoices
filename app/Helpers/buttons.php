@@ -13,7 +13,7 @@ if (!function_exists('deleteForm')) {
         $form = '<form action="' . $pp . '" method="post" class="d-inline-block" id="'.$unique.'">
                 <input name="_method" type="hidden" value="delete">
                 <input type="hidden" name="_token" id="csrf-token" value="' . \Session::token() . '" />';
-        $form .= '<button type="submit" class="btn btn-icon btn-outline-danger waves-effect delete-record" title="'.__('Delete').'">
+        $form .= '<button type="submit" class="btn btn-icon btn-danger waves-effect delete-record" title="'.__('Delete').'">
             <i data-feather="trash-2"></i></button>';
         $form .= '</form>';
 
@@ -28,7 +28,7 @@ if (!function_exists('destroyForm')) {
         } else {
             $pp = route("app.{$route}.deleteForever", $row->id);
         }
-        $form = '<a href="'.$pp.'" class="btn btn-icon btn-outline-danger waves-effect delete-record" title="'.__('Delete Forever').'">
+        $form = '<a href="'.$pp.'" class="btn btn-icon btn-danger waves-effect delete-record" title="'.__('Delete Forever').'">
                 <i data-feather="trash"></i></a>';
         return $form;
     }
@@ -38,7 +38,7 @@ if (!function_exists('restoreForm')) {
     function restoreForm($route, $row)
     {
         $pp = route("app.{$route}.restore", $row->id);
-        $form = '<a class="btn btn-icon btn-outline-info waves-effect mr-1" href="' . $pp . '" title="'.__('Restore').'">
+        $form = '<a class="btn btn-icon btn-info waves-effect mr-1" href="' . $pp . '" title="'.__('Restore').'">
                 <i data-feather="rotate-cw"></i></a>';
         return $form;
     }
@@ -48,7 +48,7 @@ if (!function_exists('showForm')) {
     function showForm($route, $row)
     {
         $pp = route("app.{$route}.show", $row->id);
-        $form = '<a class="btn btn-icon btn-outline-primary waves-effect mr-1" href="' . $pp . '" title="'.__('Show').'">
+        $form = '<a class="btn btn-icon btn-primary waves-effect mr-1" href="' . $pp . '" title="'.__('Show').'">
                 <i data-feather="eye"></i></a>';
         return $form;
     }
@@ -58,7 +58,7 @@ if (!function_exists('editForm')) {
     function editForm($route, $row)
     {
         $pp = route("app.{$route}.edit", $row->id);
-        $form = '<a class="btn btn-icon btn-outline-success waves-effect mr-1" href="' . $pp . '" title="'.__('Edit').'">
+        $form = '<a class="btn btn-icon btn-success waves-effect mr-1" href="' . $pp . '" title="'.__('Edit').'">
                 <i data-feather="edit"></i></a>';
         return $form;
     }

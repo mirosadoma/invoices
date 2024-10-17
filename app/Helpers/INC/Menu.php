@@ -221,9 +221,27 @@ $data = [
         ]
     ],
     [
+        'title'         => 'Expenses',
+        'icon'          => 'dollar-sign',
+        'order'         => 11,
+        'permission'    => 'expenses',
+        'items'         => [
+            [
+                'title'         => 'All Expenses',
+                'url'           => route('app.expenses.index'),
+                'permission'    => 'view'
+            ],
+            [
+                'title'         => 'Add New Quotation',
+                'url'           => route('app.expenses.create'),
+                'permission'    => 'create'
+            ]
+        ]
+    ],
+    [
         'title'         => 'Emails',
         'icon'          => 'mail',
-        'order'         => 11,
+        'order'         => 12,
         'permission'    => 'emails',
         'items'         => [
             [

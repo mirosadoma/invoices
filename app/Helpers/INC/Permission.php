@@ -58,6 +58,12 @@ return [
         'update',
         'delete',
     ],
+    'expenses'  => [
+        'view',
+        'create',
+        'update',
+        'delete',
+    ],
     'emails'  => [
         'view',
         'send',

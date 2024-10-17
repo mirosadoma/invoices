@@ -15,6 +15,7 @@ use App\Http\Controllers\Dashboard\ActivitiesController;
 use App\Http\Controllers\Dashboard\ProjectsController;
 use App\Http\Controllers\Dashboard\InvoicesController;
 use App\Http\Controllers\Dashboard\QuotationsController;
+use App\Http\Controllers\Dashboard\ExpensesController;
 use App\Http\Controllers\Dashboard\EmailsController;
 
 // Dashboard
@@ -72,6 +73,7 @@ Route::middleware(['web','admin'])->prefix('/app')->name('app.')->group(function
 
     // Invoices Area
     Route::get('invoices/print/{invoice}', [InvoicesController::class, 'print'])->name('invoices.print'); // Done
+    Route::get('invoices/send_invoice_email/{invoice}', [InvoicesController::class, 'send_invoice_email'])->name('invoices.send_invoice_email'); // Done
     Route::get('invoices/export_pdf/{invoice}', [InvoicesController::class, 'export_pdf'])->name('invoices.export_pdf'); // Done
     Route::get('invoices/remove_signature/{invoice}', [InvoicesController::class, 'remove_signature'])->name('invoices.remove_signature'); // Done
     Route::resource('invoices', InvoicesController::class); // Done
@@ -81,6 +83,10 @@ Route::middleware(['web','admin'])->prefix('/app')->name('app.')->group(function
     Route::get('quotations/export_pdf/{quotation}', [QuotationsController::class, 'export_pdf'])->name('quotations.export_pdf'); // Done
     Route::get('quotations/remove_signature/{quotation}', [QuotationsController::class, 'remove_signature'])->name('quotations.remove_signature'); // Done
     Route::resource('quotations', QuotationsController::class); // Done
+
+    // Expenses Area
+    Route::get('expenses/remove_file/{quotation}', [ExpensesController::class, 'remove_file'])->name('expenses.remove_file'); // Done
+    Route::resource('expenses', ExpensesController::class); // Done
 
     // Emails Area
     Route::get('emails', [EmailsController::class, 'index'])->name('emails.index'); // Done

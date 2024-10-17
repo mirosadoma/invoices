@@ -60,7 +60,7 @@ class EmailsController extends Controller {
                 $data['user_email'] = $client->email;
                 $data['project_name'] = __("Themarkrise");
                 $data['welcome_msg'] = __("Welcome");
-                $data['project_link'] = env('FRONT_URL', 'https://www.kafroasters.net/');
+                $data['project_link'] = env('FRONT_URL', 'https://themarkrise.com/');
                 $data['content'] = $request->content;
                 dispatch(new EmailJob($data, $client));
             }
@@ -76,7 +76,7 @@ class EmailsController extends Controller {
                 $data['user_email'] = $client->email;
                 $data['project_name'] = __("Themarkrise");
                 $data['welcome_msg'] = __("Welcome");
-                $data['project_link'] = env('FRONT_URL', 'https://www.kafroasters.net/');
+                $data['project_link'] = env('FRONT_URL', 'https://themarkrise.com/');
                 $data['content'] = $request->content;
                 dispatch(new EmailJob($data, $client));
             }

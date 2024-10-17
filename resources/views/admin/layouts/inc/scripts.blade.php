@@ -123,11 +123,23 @@
         $(":input").not(':button, :submit, :reset, :hidden, :checkbox, :radio').trigger("reset");
     }
 </script>
-{{-- <script>
-    $(window).on('load', function() {
-        $('.menu-collapsed .navigation-main').find('.open').removeClass('open');
+<script>
+    $('.search_button').on('click', function(e){
+        e.preventDefault();
+        var min_date = new Date('2022-01-01');
+        var max_date = new Date("{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01");
+        var date_val = new Date($('input[type="date"]').val());
+
+        console.log(date_val.getTime());
+            console.log(min_date.getTime());
+        if (date_val.getTime() < min_date.getTime() || date_val.getTime() > max_date.getTime()) {
+
+            AlertMe('error',"{{ __('Date Range Is Wrong') }}");
+        }else{
+            $('.dt_adv_search').submit();
+        }
     });
-</script> --}}
+</script>
 <script>
     $(function () {
         $('.delete-record').click(function (e) {

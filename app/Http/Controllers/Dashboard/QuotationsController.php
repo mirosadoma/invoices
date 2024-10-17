@@ -23,8 +23,10 @@ class QuotationsController extends Controller {
         }
         $lists = Quotation::query();
         if (request()->has('filter') && request('filter') != 0) {
-            if (request()->has('number') && !empty(request('number'))) {
-                $lists->where("number",request('number'));
+            if (request()->has('client_name') && !empty(request('client_name'))) {
+                $lists->whereHas("user", function($q){
+                    return $q->where('name', 'LIKE', '%'.request('client_name').'%');
+                });
             }
             // if (request()->has('client_id') && !is_null(request('client_id'))) {
             //     $lists->where('client_id', request('client_id'));
@@ -143,10 +145,12 @@ class QuotationsController extends Controller {
     }
 
     public function export_pdf(Quotation $quotation) {
-        $html = view('admin.quotations.export', get_defined_vars())->render();
-        // $pdf = (new CreatePdfFile())->getPdf($html)->setWaterMark(app_settings()->logo_path);
-        $pdf = (new CreatePdfFile())->getPdf($html);
-        return $quotation ?$pdf->output('quotations.pdf', "D") : redirect()->back()->with('error', __('No Data Founded'));
+        // Export PDF
+        $html = 'admin/quotations/export';
+        // Generate PDF
+        $pdf = (new CreatePdfFile())->getPdf($html, get_defined_vars())->setPaper('A4', 'portrait')->build();
+        $fileName = 'quotations_' . time() . '_' .  $quotation->id . '.pdf'; // Unique file name
+        return $quotation ? $pdf->download($fileName) : redirect()->back()->with('error', __('No Data Founded'));
     }
 
     public function remove_signature(Quotation $quotation) {

@@ -10,7 +10,7 @@
     <base href="/">
     <!-- Site Title -->
     <title>@lang("Order Number : ") {{ $quotation->id }}</title>
-    <link rel="stylesheet" href="{{url('/')}}/assets/envoice_template/css/style.css">
+    <link rel="stylesheet" href="{{public_path('/')}}/assets/envoice_template/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
         @page {
@@ -34,7 +34,7 @@
                                             <h2 class="text-2xl font-semibold">@lang('Quotation')</h2>
                                         </td>
                                         <td class="cs-width_2 cs-primary_color cs-bold cs-primary_color cs-f16" style="text-align: right">
-                                            <img src="{{app_settings()->logo_path}}" alt="Logo" style="width:200px">
+                                            <img src="{{(app_settings()->logo) ? public_path(app_settings()->logo) : public_path('assets/mark-rise-logo-02.png')}}" alt="Logo" style="width:200px">
                                         </td>
                                     </tr>
                                 </tbody>
@@ -90,18 +90,18 @@
                                     <table class="border-collapse table-auto w-full text-sm mb-12 whitespace-pre">
                                         <thead>
                                             <tr class="bg-primary text-white text-center">
-                                                <th class="p-5 uppercase text-base font-medium border-style" style="border: none !important;">@lang('Activities')</th>
-                                                <th class="p-5 uppercase text-base font-medium border-s-2 border-style" style="border: none !important;">@lang('Description')</th>
-                                                <th class="p-5 uppercase text-base font-medium border-s-2 border-style" style="border: none !important;">@lang('Price')</th>
+                                                <th class="p-5 uppercase text-base font-medium border-style" style="background-color:#d4202c;color:#fff;border: 1px solid #fff">@lang('Activities')</th>
+                                                <th class="p-5 uppercase text-base font-medium border-s-2 border-style" style="background-color:#d4202c;color:#fff;border: 1px solid #fff">@lang('Description')</th>
+                                                <th class="p-5 uppercase text-base font-medium border-s-2 border-style" style="background-color:#d4202c;color:#fff;border: 1px solid #fff">@lang('Price')</th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white">
                                             @if($quotation->quotation_activities)
                                                 @foreach ($quotation->quotation_activities as $key => $quotation_activity)
                                                     <tr class="bg-gray-100 text-center">
-                                                        <td class="p-5 text-base font-medium border-style">{{$quotation_activity->activity->name}}</td>
-                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style">{{$quotation_activity->description}}</td>
-                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style">{{$quotation_activity->price}}</td>
+                                                        <td class="p-5 text-base font-medium border-style" style="background-color:#f5f7ff;color:#000">{{$quotation_activity->activity->name}}</td>
+                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style" style="background-color:#f5f7ff;color:#000">{{$quotation_activity->description}}</td>
+                                                        <td class="p-5 text-base font-medium border-s-2 border-white border-style" style="background-color:#f5f7ff;color:#000">{{$quotation_activity->price}}</td>
                                                     </tr>
                                                 @endforeach
                                             @else
@@ -144,7 +144,7 @@
                         <div class="cs-mb10 text-start">
                             <b class="cs-primary_color">@lang("Signature")</b>
                             <div>
-                                <img src="{{$quotation->signature_path}}" alt="{{__('Signature')}}" style="height: 100px;">
+                                <img src="{{($quotation->signature) ? public_path($quotation->signature) : public_path('assets/mark-rise-logo-02.png')}}" alt="{{__('Signature')}}" style="height: 100px;">
                             </div>
                         </div>
                     </div>

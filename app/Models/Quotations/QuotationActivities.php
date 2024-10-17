@@ -12,7 +12,7 @@ class QuotationActivities extends Model {
 
     public function quotation()
     {
-        return $this->belongsTo(Quotations::class, 'quotation_id');
+        return $this->belongsTo(Quotation::class, 'quotation_id');
     }
 
     public function activity()

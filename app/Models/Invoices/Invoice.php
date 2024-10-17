@@ -16,7 +16,6 @@ class Invoice extends Model {
         return ($this->signature) ? url($this->signature) : url('assets/mark-rise-logo-02.png');
     }
 
-
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
@@ -31,4 +30,9 @@ class Invoice extends Model {
     {
         return $this->hasMany(InvoiceActivities::class, 'invoice_id');
     }
+
+    // public function getInvoiceMonthAttribute()
+    // {
+    //     return $this->created_at->month;
+    // }
 }

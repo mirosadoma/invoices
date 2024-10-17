@@ -43,14 +43,10 @@
         @empty
         @endforelse
     </div>
-    {{-- <div class="row">
-        <!--Bar Chart Start -->
-        <div class="col-xl-12 col-12">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-sm-center align-items-start flex-sm-row flex-column">
-                    <div class="header-left">
-                        <h4 class="card-title">@lang("Order Charts")</h4>
-                    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="card card-statistics">
+                <div class="card-body" style="height: 500px;">
                     <div class="header-right d-flex align-items-center mt-sm-0 mt-1">
                         <i data-feather="calendar"></i>
                         <select name="year" class="select2 get_year">
@@ -59,41 +55,58 @@
                             @endforeach
                         </select>
                     </div>
-                </div>
-                <div class="card-body">
-                    <canvas class="bar-chart-ex chartjs" data-height="500"></canvas>
+                    <div id="invoiceChart" style="height: 100%;"></div>
                 </div>
             </div>
         </div>
-        <!-- Bar Chart End -->
-    </div> --}}
+    </div>
 @endsection
-{{-- @push('styles')
-    <link rel="stylesheet" type="text/css" href="admin/app-assets/vendors/css/pickers/flatpickr/flatpickr.min.css">
-    <link rel="stylesheet" type="text/css" href="admin/app-assets/css-rtl/plugins/forms/pickers/form-flat-pickr.css">
-@endpush
 @push('scripts')
-    <script>
-        var monthes         = [];
-        var orders_count    = [];
-        @foreach($all_data as $monthe)
-            monthes.push("{{$monthe['month']}}");
-            orders_count.push("{{$monthe['count']}}");
-        @endforeach
-    </script>
-    <script src="admin/app-assets/vendors/js/charts/chart.min.js"></script>
-    <script src="admin/app-assets/vendors/js/pickers/flatpickr/flatpickr.min.js"></script>
-    <script src="admin/app-assets/js/scripts/charts/chart-chartjs.js"></script>
-    <script>
-        $(".get_year").on('change', function () {
-            var year = $(this).val();
-            var route = _url_+'app/get_year/'+year;
-            $.get(route, function(data) {
-                console.log(data);
-                if (data = "true") {
-                    window.location.reload();
-                }
-            });
-        });
-    </script>
-@endpush --}}
+<script src="https://cdn.anychart.com/js/latest/anychart.min.js"></script>
+<script>
+    // columns chart
+    var all_data = [];
+    @foreach($invoicesCharts as $invoicesChart)
+        var values = [
+            "{{$invoicesChart['month']}}",
+            parseInt("{{ $invoicesChart['invoices_total'] }}"),
+            parseInt("{{ $invoicesChart['expense_month'] }}"),
+            parseInt("{{ $invoicesChart['net_month'] }}"),
+        ];
+        all_data.push(values);
+    @endforeach
+    anychart.onDocumentLoad(function(){
+        var dataSet = anychart.data.set(all_data);
+        var chart = anychart.column();
+
+        chart.column(dataSet.mapAs({value:1,x:0}))
+            .name("Revenue")
+            .fill('orange')
+            .stroke('orange');
+        chart.column(dataSet.mapAs({value:2,x:0}))
+            .name("Expenses")
+            .fill('red')
+            .stroke('red');
+        chart.column(dataSet.mapAs({value:3,x:0}))
+            .name("Net")
+            .fill('green')
+            .stroke('green');
+
+        chart.grid(0,{layout:'vertical'})
+        chart.barGroupsPadding(3)
+
+        chart.legend(true);
+        chart.title("{{__('Invoice Charts')}}")
+        chart.yScale().minimum(0);
+        chart.container('invoiceChart');
+        chart.draw();
+    });
+</script>
+<script>
+    $(".get_year").on('change', function () {
+        var year = $(this).val();
+        var route = _url_+'app?year='+year;
+        window.location.href = route;
+    });
+</script>
+@endpush
