@@ -222,7 +222,7 @@ $data = [
     ],
     [
         'title'         => 'Expenses',
-        'icon'          => 'dollar-sign',
+        'icon'          => 'briefcase',
         'order'         => 11,
         'permission'    => 'expenses',
         'items'         => [
