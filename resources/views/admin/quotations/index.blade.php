@@ -109,7 +109,7 @@
                                         <td>
                                             <?php $link = route('app.quotations.print', $item->id); ?>
                                             <a class="btn btn-icon btn-info waves-effect mr-1" onClick="MyWindow=window.open('{!! $link !!}','MyWindow','width=1500,height=1000'); return false;"  title="{{__('Print')}}"><i data-feather="printer"></i></a>
-                                            <a class="btn btn-icon btn-warning waves-effect mr-1" href="{{route('app.quotations.export_pdf', $item->id)}}" title="{{__('Download PDF')}}"><i data-feather="file-text"></i></a>
+                                            <a class="btn btn-icon btn-warning waves-effect mr-1" href="{{route('app.quotations.export_pdf', $item->id)}}" title="{{__('Download PDF')}}"><i data-feather="download"></i></a>
                                             {!! editForm('quotations', $item) !!}
                                             {!! deleteForm('quotations', $item) !!}
                                         </td>
