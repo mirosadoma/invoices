@@ -112,7 +112,7 @@
               <!-- START MAIN CONTENT AREA -->
               <tr>
                 <td class="wrapper" style="font-family: Helvetica, sans-serif; font-size: 16px; vertical-align: top; box-sizing: border-box; padding: 24px;" valign="top">
-                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><img src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/mark-rise-logo-01.png') }}" title="Logo" alt="{{ asset(app_settings()->logo ?? 'assets/mark-rise-logo-01.png') }}"></p>
+                  <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;"><img style="width: 150px;" src="{{ $message->embed(app_settings()->logo ? public_path().'/'.app_settings()->logo : public_path() . '/assets/mark-rise-logo-01.png') }}" title="Logo" alt="{{ asset(app_settings()->logo ?? 'assets/mark-rise-logo-01.png') }}"></p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;direction: rtl;">{{ $data['welcome_msg'] }}&nbsp;{{$data['user_name']}}&nbsp;@lang("to Themarkrise")</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">@lang("Thank you for subscribing to us")</p>
                   <p style="font-family: Helvetica, sans-serif; font-size: 16px; font-weight: normal; margin: 0; margin-bottom: 16px;">{!! $data['content'] !!}</p>
