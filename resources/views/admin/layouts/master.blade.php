@@ -22,7 +22,7 @@
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="" style="position: relative">
     <div class="loader" style="background: #fff !important">
         <div class="gif">
-            <img src="{{app_settings()->logo_path}}" alt="{{ __(env('APP_NAME')) }}">
+            <img src="{{app_settings()->logo_path}}" alt="{{ __(env('APP_NAME')) }}" style="width: 100%;">
         </div>
     </div>
     <!-- BEGIN: Header-->

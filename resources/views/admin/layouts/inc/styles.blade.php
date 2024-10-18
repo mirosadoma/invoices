@@ -11,8 +11,21 @@
 
 <link rel="apple-touch-icon" href="{{url('assets/markrise-favicon.png')}}">
 <link rel="shortcut icon" type="image/x-icon" href="{{url('assets/markrise-favicon.png')}}">
+<link rel="stylesheet" href="https://use.typekit.net/ffl6viu.css">
+<style>
+    body {
+        font-family: "neue-haas-grotesk-display", sans-serif !important;
+        font-weight: 600 !important;
+        font-style: normal !important;
+    }
+    .navigation {
+        font-family: "neue-haas-grotesk-display", sans-serif !important;
+        font-weight: 600 !important;
+        font-style: normal !important;
+    }
+</style>
 @if (\App::getLocale() == "en")
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet"> --}}
     {!! assetAdmin('app-assets/css/bootstrap.css','css') !!}
     {!! assetAdmin('app-assets/css/bootstrap-extended.css','css') !!}
     {!! assetAdmin('app-assets/css/colors.css','css') !!}
@@ -38,7 +51,7 @@
         }
     </style>
 @else
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet"> --}}
     {!! assetAdmin('app-assets/css-rtl/bootstrap.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/bootstrap-extended.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/colors.css','css') !!}
@@ -53,12 +66,12 @@
     {!! assetAdmin('app-assets/css-rtl/components.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/components.css','css') !!}
     <style>
-        body {
+        /* body {
             font-family: 'Cairo', sans-serif !important;
         }
         .navigation {
             font-family: 'Cairo', sans-serif !important;
-        }
+        } */
         .main-menu.menu-light .navigation>li ul li>a {
             padding: 10px 50px 10px 15px !important;
         }
@@ -380,6 +393,9 @@
 
     a.bg-lightest:hover,a.bg-lightest:focus {
         background-color: rgba(47,43,61,.06) !important
+    }
+    .main-menu.menu-light .navigation > li ul .active{
+        box-shadow: none;
     }
 </style>
 <script>

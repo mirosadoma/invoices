@@ -114,7 +114,7 @@
                                             <?php $link = route('app.invoices.print', $item->id); ?>
                                             <a style="margin: 5px 0;" class="btn btn-icon btn-primary waves-effect mr-1" href="{{route('app.invoices.send_invoice_email', $item->id)}}" title="{{__('Send Invoice Link In Email')}}"><i data-feather="send"></i></a>
                                             {{-- <a class="btn btn-icon btn-info waves-effect mr-1" onClick="MyWindow=window.open('{!! $link !!}','MyWindow','width=1500,height=1000'); return false;"  title="{{__('Print')}}"><i data-feather="printer"></i></a> --}}
-                                            <a class="btn btn-icon btn-warning waves-effect mr-1" href="{{route('app.invoices.export_pdf', $item->id)}}" title="{{__('Download PDF')}}"><i data-feather="download"></i></a>
+                                            <a class="btn btn-icon btn-success waves-effect mr-1" href="{{route('app.invoices.export_pdf', $item->id)}}" title="{{__('Download PDF')}}"><i data-feather="download"></i></a>
                                             {!! editForm('invoices', $item) !!}
                                             {!! deleteForm('invoices', $item) !!}
                                         </td>

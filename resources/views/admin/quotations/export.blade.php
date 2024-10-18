@@ -13,9 +13,19 @@
     <link rel="stylesheet" href="{{public_path('/')}}/assets/envoice_template/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        @page {
-            size: auto;
+        body {
             margin: 0;
+            padding: 0;
+        }
+
+        @page {
+            size: A4; /* Adjust based on your needs */
+            margin: 0; /* Optional: Remove default page margin */
+        }
+        .content {
+            width: 100%;
+            height: 100vh; /* Ensure content fits within one page height */
+            box-sizing: border-box;
         }
     </style>
 </head>

@@ -58,7 +58,7 @@ if (!function_exists('editForm')) {
     function editForm($route, $row)
     {
         $pp = route("app.{$route}.edit", $row->id);
-        $form = '<a class="btn btn-icon btn-success waves-effect mr-1" href="' . $pp . '" title="'.__('Edit').'">
+        $form = '<a class="btn btn-icon btn-warning waves-effect mr-1" href="' . $pp . '" title="'.__('Edit').'">
                 <i data-feather="edit"></i></a>';
         return $form;
     }
