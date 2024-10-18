@@ -21,8 +21,8 @@
 </head>
 <body class="vertical-layout vertical-menu-modern  navbar-floating footer-static" data-open="click" data-menu="vertical-menu-modern" data-col="" style="position: relative">
     <div class="loader" style="background: #fff !important">
-        <div class="gif">
-            <img src="{{app_settings()->logo_path}}" alt="{{ __(env('APP_NAME')) }}" style="width: 100%;">
+        <div class="gif" style="text-align: center;">
+            <img src="{{url('assets/Loader-MR.gif')}}" alt="{{ __(env('APP_NAME')) }}" style="width: 30%;">
         </div>
     </div>
     <!-- BEGIN: Header-->
