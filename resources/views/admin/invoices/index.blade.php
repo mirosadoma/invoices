@@ -52,11 +52,11 @@
                                 </div> --}}
                                 <div class="col-md-4">
                                     <label class="form-label">@lang('Start Date')</label>
-                                    <input type="date" name="start_date" class="form-control dt-input" data-column="6" min="2022-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('start_date', request('start_date'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
+                                    <input type="date" name="start_date" class="form-control dt-input" data-column="6" min="2023-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('start_date', request('start_date'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">@lang('End Date')</label>
-                                    <input type="date" name="end_date" class="form-control dt-input" data-column="6" min="2022-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('end_date', request('end_date'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
+                                    <input type="date" name="end_date" class="form-control dt-input" data-column="6" min="2023-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('end_date', request('end_date'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
                                 </div>
                             </div>
                             <input type="hidden" name="filter" value="1"/>

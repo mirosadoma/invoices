@@ -52,7 +52,7 @@
                                 </div> --}}
                                 <div class="col-md-4">
                                     <label class="form-label">@lang('Created At')</label>
-                                    <input type="date" name="created_at" class="form-control dt-input" data-column="6" min="2022-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('created_at', request('created_at'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
+                                    <input type="date" name="created_at" class="form-control dt-input" data-column="6" min="2023-01-01" max="{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01" value="{{old('created_at', request('created_at'))}}" placeholder="{{__('mm/dd/yy')}}" data-column-index="5" />
                                 </div>
                             </div>
                             <input type="hidden" name="filter" value="1"/>

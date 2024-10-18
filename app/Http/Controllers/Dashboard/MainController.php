@@ -47,7 +47,7 @@ class MainController extends Controller {
             $invoicesCharts[$key]['expense_month'] = $monthExpenses ? $monthExpenses->total_price : 0;
             $invoicesCharts[$key]['net_month'] = $invoicesCharts[$key]['invoices_total'] - $invoicesCharts[$key]['expense_month'];
         }
-        $years = range(2022, now()->year);
+        $years = range(2023, now()->year);
         return view('admin.index',get_defined_vars());
     }
     public function maintenance() {

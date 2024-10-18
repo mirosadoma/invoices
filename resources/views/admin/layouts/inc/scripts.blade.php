@@ -126,7 +126,7 @@
 <script>
     $('.search_button').on('click', function(e){
         e.preventDefault();
-        var min_date = new Date('2022-01-01');
+        var min_date = new Date('2023-01-01');
         var max_date = new Date("{{\Carbon\Carbon::now()->addYear()->format('Y')}}-01-01");
         var date_val = new Date($('input[type="date"]').val());
 
