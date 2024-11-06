@@ -41,7 +41,8 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                {!! TextArea($key.'[terms_and_conditions]', 'Terms And Conditions', 'form-control ', old($key.'.terms_and_conditions', $setting ? $setting->translate($key)->terms_and_conditions:''), true, $key.'_terms_and_conditions') !!}
+                                {!! TextArea($key.'[terms_and_conditions]', 'Payment methods', 'form-control ', old($key.'.terms_and_conditions', $setting ? $setting->translate($key)->terms_and_conditions:''), true, $key.'_terms_and_conditions') !!}
+
                             </div>
                         </div>
                     </div>

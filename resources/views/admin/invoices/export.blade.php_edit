@@ -32,7 +32,7 @@
     <body style="background-color: #fff !important;">
         <div class="relative">
             <div class="cs-container" style="background-color: #fff !important;">
-                <div class="cs-invoice p-12 rounded-3xl" style="height: auto !important;">
+                <div class="cs-invoice p-12 rounded-3xl" style="height: 100% !important;">
                     <div class="cs-invoice_in">
                         <div class="cs-table cs-style2">
                             <table>
@@ -146,12 +146,16 @@
                         </div>
                         <br>
                         <div class="cs-mb10 text-start">
-                            <b class="cs-primary_color">@lang("Payment Methods:")</b>
+                            <b class="cs-primary_color">@lang("Terms And Conditions:")</b>
                             <div>
-                                {!!app_settings()->translate('en')->payment_methods!!}
+                                {!!app_settings()->translate('en')->terms_and_conditions!!}
                             </div>
                         </div>
-
+                        <div class="cs-mb10 text-start">
+                            <b class="cs-primary_color">@lang("Signature")</b>
+                            <div>
+                                <img src="{{($invoice->signature) ? public_path($invoice->signature) : public_path('assets/mark-rise-logo-02.png')}}" alt="{{__('Signature')}}" style="height: 100px;">
+                            </div>
                         </div>
                     </div>
                 </div>

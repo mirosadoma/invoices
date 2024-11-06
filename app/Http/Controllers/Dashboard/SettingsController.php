@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 // Models
 use App\Models\Settings\SiteConfig;
-use App\Models\Settings\TermsAndCondition;
+use App\Models\Settings\PaymentMethods;
 
 class SettingsController extends Controller {
 
@@ -24,14 +24,15 @@ class SettingsController extends Controller {
             return abort(403);
         }
         $data = $request->all();
+        
         if($type == 'config'){
             Validator::make($request->all(),[
                 // 'ar.title'                  => 'required|string|between:2,500',
                 'en.title'                  => 'required|string|between:2,500',
                 // 'ar.address'                => 'required|string|between:2,1000',
                 'en.company_name'           => 'required|string|between:2,1000',
-                // 'ar.terms_and_conditions'   => 'required|string|between:2,1000',
-                'en.terms_and_conditions'   => 'required|string|between:2,1000',
+                // 'ar.payment_methods'   => 'required|string|between:2,1000',
+                'en.payment_methods'   => 'nullable|string|between:2,1000',
                 'email'                     => 'required|email:filter|between:2,200',
                 'phone'                     => 'required',
                 'tax'                       => 'required',
