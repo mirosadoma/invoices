@@ -27,7 +27,7 @@ class CreateSettingsTable extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('company_name')->nullable();
-            $table->longText('terms_and_conditions')->nullable();
+            $table->longText('payment_methods')->nullable();
             $table->string('locale')->index();
             $table->unsignedBigInteger('site_config_id')->nullable();
             $table->foreign('site_config_id')->references('id')->on('site_config')->onUpdate('cascade')->onDelete('cascade');

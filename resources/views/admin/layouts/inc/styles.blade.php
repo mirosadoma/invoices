@@ -35,6 +35,7 @@
     {!! assetAdmin('app-assets/css/themes/semi-dark-layout.css','css') !!}
     {!! assetAdmin('app-assets/css/core/menu/menu-types/vertical-menu.css','css') !!}
     {!! assetAdmin('app-assets/vendors/css/vendors.min.css','css') !!}
+    {!! assetAdmin('app-assets/vendors/css/extensions/sweetalert2.min.css','css') !!}
     {!! assetAdmin('app-assets/vendors/css/tables/datatable/dataTables.bootstrap5.min.css','css') !!}
     {!! assetAdmin('app-assets/vendors/css/tables/datatable/responsive.bootstrap4.min.css','css') !!}
     {!! assetAdmin('assets/css/style.css','css') !!}
@@ -61,6 +62,7 @@
     {!! assetAdmin('app-assets/css-rtl/themes/semi-dark-layout.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/core/menu/menu-types/vertical-menu.css','css') !!}
     {!! assetAdmin('app-assets/vendors/css/vendors-rtl.min.css','css') !!}
+    {!! assetAdmin('app-assets/vendors/css/extensions/sweetalert2.min.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/custom-rtl.css','css') !!}
     {!! assetAdmin('assets/css/style-rtl.css','css') !!}
     {!! assetAdmin('app-assets/css-rtl/components.css','css') !!}

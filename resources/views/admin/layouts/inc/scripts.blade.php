@@ -1,5 +1,6 @@
 <!-- BEGIN: Vendor JS-->
 {!! assetAdmin('app-assets/vendors/js/vendors.min.js','js') !!}
+{!! assetAdmin('app-assets/vendors/js/extensions/sweetalert2.all.min.js','js') !!}
 {!! assetAdmin('app-assets/fileinput/js/piexif.min.js','js') !!}
 @if (\App::getLocale() == "en")
     {!! assetAdmin('app-assets/fileinput/js/fileinput.en.js','js') !!}

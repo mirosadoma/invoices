@@ -13,10 +13,4 @@ class Expense extends Model {
     {
         return ($this->file) ? url($this->file) : '#';
     }
-    
-    public function expense_activities()
-{
-    // Code to get related activities for the expense
-    return $this->hasMany(ExpenseActivity::class);
-}
 }

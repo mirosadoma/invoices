@@ -72,6 +72,7 @@ Route::middleware(['web','admin'])->prefix('/app')->name('app.')->group(function
     Route::get('projects/is_active/{project}', [ProjectsController::class, 'is_active'])->name('projects.is_active'); // Done
 
     // Invoices Area
+    Route::get('invoices/update_status/{invoice}/{status}', [InvoicesController::class, 'update_status'])->name('invoices.update_status'); // Done
     Route::get('invoices/print/{invoice}', [InvoicesController::class, 'print'])->name('invoices.print'); // Done
     Route::get('invoices/send_invoice_email/{invoice}', [InvoicesController::class, 'send_invoice_email'])->name('invoices.send_invoice_email'); // Done
     Route::get('invoices/export_pdf/{invoice}', [InvoicesController::class, 'export_pdf'])->name('invoices.export_pdf'); // Done

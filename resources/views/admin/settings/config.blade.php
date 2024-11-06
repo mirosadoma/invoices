@@ -41,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                {!! TextArea($key.'[terms_and_conditions]', 'Payment methods', 'form-control ', old($key.'.terms_and_conditions', $setting ? $setting->translate($key)->terms_and_conditions:''), true, $key.'_terms_and_conditions') !!}
+                                {!! TextArea($key.'[payment_methods]', 'Payment methods', 'form-control ', old($key.'.payment_methods', $setting ? $setting->translate($key)->payment_methods:''), true, $key.'_payment_methods') !!}
 
                             </div>
                         </div>
@@ -86,7 +86,7 @@
     <script src="https://cdn.ckeditor.com/4.11.4/standard-all/ckeditor.js"></script>
     <script>
         @foreach(app_languages() as $key=>$one)
-            CKEDITOR.replace("{{$key}}"+'_terms_and_conditions', {
+            CKEDITOR.replace("{{$key}}"+'_payment_methods', {
                 colorButton_colors: '000,800000,8B4513,2F4F4F,008080,000080,4B0082,696969,' +
                     'B22222,A52A2A,DAA520,006400,40E0D0,0000CD,800080,808080,' +
                     'F00,FF8C00,FFD700,008000,0FF,00F,EE82EE,A9A9A9,' +

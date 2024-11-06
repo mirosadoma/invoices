@@ -146,9 +146,9 @@
                         </div>
                         <br>
                         <div class="cs-mb10 text-start">
-                            <b class="cs-primary_color">@lang("Terms And Conditions:")</b>
+                            <b class="cs-primary_color">@lang("Payment Methods:")</b>
                             <div>
-                                {!!app_settings()->translate('en')->terms_and_conditions!!}
+                                {!!app_settings()->translate('en')->payment_methods!!}
                             </div>
                         </div>
                         <div class="cs-mb10 text-start">

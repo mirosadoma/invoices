@@ -152,6 +152,15 @@ class InvoicesController extends Controller {
         return view('admin.invoices.print', get_defined_vars());
     }
 
+    public function update_status(Invoice $invoice, $status) {
+        if ($status) {
+            $invoice->update(['status'=>$status]);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public function send_invoice_email(Invoice $invoice) {
         // Export PDF
         $destinationPath = 'uploads/invoices/pdf/';

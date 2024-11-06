@@ -75,7 +75,6 @@ class ExpensesController extends Controller {
             return abort(403);
         }
         DeleteFile($expense->file);
-        $expense->expense_activities()->delete();
         $expense->delete();
         return redirect()->route('app.expenses.index')->with('success', __('Data Deleted Successfully'));
     }

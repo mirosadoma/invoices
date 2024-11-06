@@ -44,7 +44,7 @@
                                 <option value="0" selected disabled>@lang('Choose')</option>
                                 <option value="paid" @if(old('status',$invoice->status) == "paid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','paid'))))</option>
                                 <option value="unpaid" @if(old('status',$invoice->status) == "unpaid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','unpaid'))))</option>
-                                <option value="in_process" @if(old('status',$invoice->status) == "in_process") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','in_process'))))</option>
+                                {{-- <option value="in_process" @if(old('status',$invoice->status) == "in_process") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','in_process'))))</option> --}}
                             </select>
                         </div>
                     </div>

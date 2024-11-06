@@ -13,7 +13,7 @@ class SiteConfig extends Model {
     protected $table = "site_config";
     protected $translationForeignKey = "site_config_id";
     public $translatedAttributes = [
-        'title','company_name','terms_and_conditions'
+        'title','company_name','payment_methods'
     ];
     public $translationModel = 'App\Models\Settings\Translation\SiteConfig';
     protected $guarded = ['id'];

@@ -24,7 +24,7 @@ class SettingsController extends Controller {
             return abort(403);
         }
         $data = $request->all();
-        
+
         if($type == 'config'){
             Validator::make($request->all(),[
                 // 'ar.title'                  => 'required|string|between:2,500',
@@ -40,7 +40,7 @@ class SettingsController extends Controller {
             ],[],[
                 'en.title'                  => __('Title'),
                 'en.company_name'           => __('Company Name'),
-                'en.terms_and_conditions'   => __('Terms And Conditions'),
+                'en.payment_methods'   => __('Payment Methods'),
                 'tax'                       => __('Tax'),
                 'phone'                     => __('Phone'),
                 'email'                     => __('Email'),

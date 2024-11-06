@@ -22,7 +22,7 @@
                         <h4 class="card-title">@lang('Advanced Search')</h4>
                         <div class="card-title">
                             <button class="btn btn-primary btn-round waves-effect waves-float waves-light search_button" title="{{__("Search")}}" style="padding: 10px 25px;" type="button"> @lang("Search") <i data-feather="search"></i></button>
-                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset Search Data")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"> @lang("Reset Search Data") <i data-feather="minus-circle"></i></button>
+                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"> @lang("Reset") <i data-feather="minus-circle"></i></button>
                         </div>
                     </div>
                     <!--Search Form -->
@@ -99,12 +99,18 @@
                                         <td> {{$item->currance ?? '-------'}} </td>
                                         <td>
                                             @if ($item->status == "paid")
-                                                <span class="badge bg-label-warning">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                                <span class="badge bg-label-success change_status change_{{ $item->id }}" data-id="{{ $item->id }}" data-item-class="bg-label-success">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
                                             @elseif($item->status == "unpaid")
-                                                <span class="badge bg-label-danger">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
-                                            @elseif($item->status == "in_process")
-                                                <span class="badge bg-label-success">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                                <span class="badge bg-label-danger change_status change_{{ $item->id }}" data-id="{{ $item->id }}" data-item-class="bg-label-danger">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                            {{-- @elseif($item->status == "in_process")
+                                                <span class="badge bg-label-warning change_status change_{{ $item->id }}" data-id="{{ $item->id }}" data-item-class="bg-label-warning">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span> --}}
                                             @endif
+                                            <select class="select-search form-control save_update update_status_{{ $item->id }}" data-item-id="{{ $item->id }}" style="display: none">
+                                                <option value="0" selected disabled>@lang('Choose')</option>
+                                                <option value="paid" @if(old('status',$item->status) == "paid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','paid'))))</option>
+                                                <option value="unpaid" @if(old('status',$item->status) == "unpaid") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','unpaid'))))</option>
+                                                {{-- <option value="in_process" @if(old('status',$item->status) == "in_process") selected @endif>@lang(ucwords(strtolower(str_replace('_',' ','in_process'))))</option> --}}
+                                            </select>
                                         </td>
                                         <td> {{$item->project->name ?? '-------'}} </td>
                                         <td> {{ucfirst($item->user_type) ?? '-------'}} </td>
@@ -142,3 +148,45 @@
     <!--/ Advanced Search -->
 </div>
 @endsection
+@push('scripts')
+    <script>
+        $(function () {
+            $('.select2').hide();
+        })
+        $('.change_status').on('click', function () {
+            var id = $(this).attr("data-id");
+            $(this).hide();
+            $('.update_status_'+id).show();
+            $('.update_status_'+id).next().show();
+        })
+        $('.save_update').on('change', function(){
+            var item_id = $(this).attr('data-item-id');
+            var item_class = $('.change_'+item_id).attr('data-item-class');
+            var item_val = $(this).val();
+            var url = _url_+"app/invoices/update_status/"+item_id+'/'+item_val;
+            $.get(url, function(response) {
+                if (response == false) {
+                    alert("{{ __('Error Happen!') }}");
+                } else {
+                    $('.change_'+item_id).removeClass(item_class);
+                    if (item_val == "paid"){
+                        $('.change_'+item_id).addClass('bg-label-success');
+                        $('.change_'+item_id).html('Paid');
+                        $('.change_'+item_id).attr('data-item-class', 'bg-label-success');
+                    }else if(item_val == "unpaid"){
+                        $('.change_'+item_id).addClass('bg-label-danger');
+                        $('.change_'+item_id).html('Unpaid');
+                        $('.change_'+item_id).attr('data-item-class', 'bg-label-danger');
+                    // }else if(item_val == "in_process"){
+                    //     $('.change_'+item_id).addClass('bg-label-warning');
+                    //     $('.change_'+item_id).html('In Process');
+                    //     $('.change_'+item_id).attr('data-item-class', 'bg-label-warning');
+                    }
+                    $('.update_status_'+item_id).hide();
+                    $('.update_status_'+item_id).next().hide();
+                    $('.change_'+item_id).show();
+                }
+            });
+        });
+    </script>
+@endpush

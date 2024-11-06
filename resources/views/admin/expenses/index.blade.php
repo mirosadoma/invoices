@@ -22,7 +22,7 @@
                         <h4 class="card-title">@lang('Advanced Search')</h4>
                         <div class="card-title">
                             <button class="btn btn-primary btn-round waves-effect waves-float waves-light search_button" title="{{__("Search")}}" style="padding: 10px 25px;" type="button"> @lang("Search") <i data-feather="search"></i></button>
-                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset Search Data")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"> @lang("Reset Search Data") <i data-feather="minus-circle"></i></button>
+                            <button class="btn btn-warning btn-round waves-effect waves-float waves-light form-reset" title="{{__("Reset")}}" style="padding: 10px 25px;" type="button" onclick="resetForm();"> @lang("Reset") <i data-feather="minus-circle"></i></button>
                         </div>
                     </div>
                     <!--Search Form -->
@@ -84,7 +84,7 @@
                                         <td> {{$item->price ?? '-------'}} </td>
                                         <td>
                                             @if ($item->status == "on_hold")
-                                                <span class="badge bg-label-warning">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
+                                                <span class="badge bg-label-danger">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
                                             @elseif($item->status == "paid")
                                                 <span class="badge bg-label-success">@lang(ucwords(strtolower(str_replace('_',' ',$item->status))))</span>
                                             @endif
